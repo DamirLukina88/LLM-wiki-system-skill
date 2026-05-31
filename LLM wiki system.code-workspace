@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.md": "markdown"
+		},
+		"files.exclude": {
+			"**/.directory": true
+		},
+		"search.exclude": {
+			"**/.directory": true
+		},
+		"markdown.extension.toc.levels": "2..3"
+	},
+	"extensions": {
+		"recommendations": [
+			"davidanson.vscode-markdownlint",
+			"yzhang.markdown-all-in-one"
+		]
+	}
+}
