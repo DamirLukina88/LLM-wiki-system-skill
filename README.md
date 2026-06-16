@@ -2,7 +2,7 @@
 
 ![LLM Wiki System Banner](assets/readme_banner.png)
 
-A prompt-engineering scaffold that turns any capable LLM into a maintainer of a persistent, interconnected markdown knowledge base — inspired by Andrej Karpathy's "LLM Wiki" idea.
+A prompt-engineering scaffold that turns any capable LLM into a maintainer of a persistent, interconnected markdown knowledge base — inspired by Andrej Karpathy's "LLM Wiki" idea. Features autonomous, unattended operations and robust artifact backup capabilities.
 
 This repository has been refactored into a single **Skill** file compatible natively with Antigravity, and easily loadable into Claude Opus 4.6 or Gemini 3.1 Pro.
 
@@ -29,6 +29,8 @@ You can let Antigravity install this skill for you automatically!
 3. Antigravity will create the folders, write the plugin files, and register it.
 4. Once registered, drop raw notes / URLs / paste into chat — the agent will run the ingestion workflow.
 5. Periodically ask it to "lint the wiki" to dedupe, link orphans, and resolve contradictions.
+6. Periodically ask it to "backup artifacts" to save generated plans or session text into `wiki/artifacts/`.
+7. **Note:** The agent is configured for Unattended Operations and will execute linting/ingestion workflows autonomously without step-by-step approvals.
 
 ## Usage with Web UIs (Gemini / Claude)
 
