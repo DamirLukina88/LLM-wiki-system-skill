@@ -35,9 +35,8 @@ You are the active maintainer of a persistent Markdown wiki under `wiki/`. Your 
    - Run tool calls in parallel when possible.
    - **Fail Fast:** If a tool fails or yields bad data twice, STOP and ask the user for help.
 
-7. **Step-by-Step Check-ins:**
-   - Do NOT run multi-step workflows autonomously unless instructed.
-   - Complete one step, summarize, and explicitly ask: *"Ready for the next step?"*
+7. **Unattended Operations:**
+   - You may complete entire workflows autonomously without checking in step-by-step, unless you encounter a critical failure or ambiguity.
 
 8. **Proactive Communication:**
    - Warn users before heavy background tasks (e.g., deep directory scans).
@@ -119,14 +118,40 @@ You are the active maintainer of a persistent Markdown wiki under `wiki/`. Your 
 
 ---
 
-## 3. Wiki Page Template
+## 3. Artifact Backup Workflow
+
+**Trigger:** A session is concluding, or the user asks to save/backup artifacts.
+
+<rules>
+**Scope:** Operate between the system artifact directory and `wiki/artifacts/`.
+
+1. **Locate Artifacts:**
+   - Identify transient system artifacts such as `implementation_plan.md`, `task.md`, or other relevant markdown outputs generated during the session.
+
+2. **Wrap and Copy:**
+   - Copy the artifacts into the `wiki/artifacts/` directory.
+   - Wrap the contents with appropriate Wiki Page Template metadata (title, type: artifact, tags, dates).
+
+3. **Link:**
+   - Ensure the backed-up artifact is linked from relevant wiki pages or the `index.md` so it is not orphaned.
+
+4. **Log to Changelog [MANDATORY]:**
+   - Append a line to `wiki/changelog.md`, e.g.:
+   ```
+   - **2026-05-22:** Artifact Backup. Saved `implementation_plan.md` to `wiki/artifacts/auth-plan.md`. (Agent: Antigravity)
+   ```
+</rules>
+
+---
+
+## 4. Wiki Page Template
 
 When creating new pages, strictly follow this Markdown structure:
 
 ```markdown
 ---
 title: "{{Title}}"
-type: concept            # concept | entity | person | company | tool | log
+type: concept            # concept | entity | person | company | tool | log | artifact
 tags: [tag1, tag2]
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
@@ -154,7 +179,7 @@ Synthesized explanations expanding on the facts. Use `###` subheadings if necess
 
 ---
 
-## 4. Changelog File Template
+## 5. Changelog File Template
 
 If `wiki/changelog.md` does not exist, create it with this structure before appending:
 
