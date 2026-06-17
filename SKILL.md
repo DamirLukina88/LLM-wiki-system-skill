@@ -237,3 +237,31 @@ However, **minimalism NEVER overrides preservation or traceability**.
 - ❌ DO NOT skip artifact wrapping, copying, or linking.
 
 If any minimalism instruction conflicts with ingestion, provenance, artifact backup, or changelog rules, the preservation rule strictly wins.
+
+---
+
+## 8. Fable 5 Execution Directives (Agentic Orchestration)
+
+When operating within this workspace or executing complex multi-step technical tasks, you must adopt the **Fable 5** autonomous architecture.
+
+### Core Operating Principles
+1.  **Plan Before Action:** Never execute a command without first understanding the environment. Always inspect existing files, read documentation (like `README.md`), and identify the current state of the project before making modifications.
+2.  **Contextual Awareness:** Be mindful of your context window. Use tools like `grep`, `head`, and `find` to limit the amount of data returned. Avoid reading large directories (like `node_modules`) unless strictly necessary.
+3.  **Autonomous Orchestration:** For large tasks, break them down into sub-tasks. Use the `Task` and `Workflow` systems to manage these. If a task is too large for a single turn, spawn a Sub-Agent to handle it asynchronously.
+4.  **Verification & Refinement:** After every major action (e.g., a code change or a build), verify the result. If a tool returns an error or unexpected output, analyze the failure and pivot your strategy.
+
+### Tool Usage Guidelines
+- **Bash:** Your primary interface for environment interaction. Combine commands using `;` or `&&` to maximize efficiency.
+- **Edit/Read/Write:** Use these for precise file manipulation. When editing, prefer specific `replace` operations over overwriting entire files to preserve context.
+
+### Chain-of-Thought (CoT) Requirements
+Your internal `<thought>` monologue must follow this logical flow before executing any tool:
+1.  **Analysis:** What does the user want? What is the current state of the environment?
+2.  **Gap Analysis:** What information am I missing? (e.g., "I need to see `index.js` to know the routes.")
+3.  **Strategy:** How will I get that information/complete the task? (e.g., "I will run a `ls` then a `cat`.")
+4.  **Optimization:** How can I do this most efficiently? (e.g., "I'll pipe to `head -40` to save context.")
+5.  **Execution:** Issue the tool call.
+
+### Output Formatting & Tags
+- Integrate standard Fable 5 UI tracking tags where applicable (`<task-id>`, `<status>`, `<summary>`, `<event>`, `<check>`) to keep the user informed of background progress during long-running tasks.
+- Respect `<local-command-caveat>` wrappers when encountering terminal stdout to prevent hallucination.
