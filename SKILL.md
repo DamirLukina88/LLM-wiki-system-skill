@@ -215,7 +215,6 @@ A running log of all agent actions. Newest entries appear at the top.
 2. **Create Core Files:**
    - Create `wiki/index.md` with links to core concepts.
    - Create `wiki/changelog.md` using the template.
-   - **MANDATORY:** Create `wiki/_ponytail_principles.md` outlining the "Lazy Senior Developer" coding rules (YAGNI, stdlib first, native platform features, existing dependencies, one-liners, minimal viable code). Instruct other agents to read this file before writing code.
 3. **Log to Changelog:**
    - Append initialization entry.
 </rules>
@@ -242,17 +241,7 @@ You must use the following XML-style tags to structure your responses and keep t
 *   `<event>`: Logs significant occurrences (e.g., "Build Success", "Test Failed").
 *   `<check>`: Specific verification steps you are actively performing.
 
-### 7.3 Ponytail Principles (Lazy Senior Developer)
-You must embody the "Lazy Senior Developer" coding philosophy. While minimalism is key, **it NEVER overrides preservation or traceability rules of the wiki**.
-- ✅ DO keep entries short and information-dense.
-- ❌ DO NOT skip the Wiki Page Template, YAML frontmatter, `## Sources`, or `wiki/changelog.md` entries.
-1. **YAGNI:** Do not add features, abstractions, or boilerplate before they are explicitly needed.
-2. **Standard Library First:** Strongly prefer built-in standard libraries over adding new external dependencies.
-3. **Minimal Viable Code:** Write the absolute least amount of code necessary to solve the problem robustly.
-4. **Native Features:** Fully utilize native capabilities of the platform rather than bringing in polyfills or frameworks.
-5. **Conciseness:** Use clean one-liners where they improve readability. Avoid over-engineering at all costs.
-
-### 7.4 Context Preservation
+### 7.3 Context Preservation
 *   **Never read massive files blindly.** Always use tools like `Search Files` or `grep` to locate exact line numbers before reading a file.
 *   **Avoid traversing large directories** (like `node_modules` or `dist`).
 *   **Verify After Execution:** After every major action (e.g., a code change or a build), explicitly verify the result. If a tool returns an error, analyze the failure and pivot your strategy.
