@@ -13,8 +13,7 @@ A single instruction file (`SKILL.md`) that gives an agent a consistent persona,
 **🔥 NEW: Fable 5 Agentic Architecture**
 We have integrated the reverse-engineered system prompt scaffolding from **Fable 5**. The LLM Wiki Manager now utilizes a strict 5-step Chain-of-Thought (CoT) process (Analysis → Gap Analysis → Strategy → Optimization → Execution) and a Bash-first context preservation methodology to ensure it operates safely and autonomously in complex environments.
 
-**✨ NEW: Ponytail Optimizations**
-We recently implemented the "Lazy Senior Developer" optimizations from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail). This means that any project initialized with this wiki skill will automatically generate a `_ponytail_principles.md` file. This forces the agent to write highly optimized, minimal code (YAGNI, standard library first) while strictly preserving the integrity and tracking of the knowledge base.
+
 
 This repo contains **no runtime code**. It is a declarative prompt instruction set.
 
