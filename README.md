@@ -10,10 +10,19 @@ This repository has been refactored into a single **Skill** file compatible nati
 
 A single instruction file (`SKILL.md`) that gives an agent a consistent persona, workflows, and output discipline for building a wiki over time.
 
-**🔥 NEW: Fable 5 Agentic Architecture**
-We have integrated the reverse-engineered system prompt scaffolding from **Fable 5**. The LLM Wiki Manager now utilizes a strict 5-step Chain-of-Thought (CoT) process (Analysis → Gap Analysis → Strategy → Optimization → Execution) and a Bash-first context preservation methodology to ensure it operates safely and autonomously in complex environments.
+**🔥 Fable 5 Agentic Architecture**
+Integrates a strict 5-step Chain-of-Thought (CoT) process (Analysis → Gap Analysis → Strategy → Optimization → Execution) with Plan-First execution workflows and context window protection to ensure the agent operates safely and autonomously.
 
+**⚡ Ponytail v2 — Efficient Senior Developer Coding Philosophy**
+Inspired by [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail), this is a heavily improved version of the original "Lazy Senior Developer" prompt. Key improvements over the original:
 
+- **The Ladder:** A strict 5-rung decision hierarchy (YAGNI → stdlib → platform → dependency → write code). Stop at the first rung that solves the problem.
+- **"Not Lazy About" Carve-outs:** Explicitly protects completeness, security, accessibility, error handling, and architectural integration from the minimalism heuristic — the fatal gap in the original.
+- **Documentation Protection:** "Deletion over addition" does NOT apply to documentation, type definitions, or inline comments. The original Ponytail caused agents to strip comments and gut type annotations.
+- **No Stubs Allowed:** Bans placeholders, `TODO` comments, and partial implementations for core logic. Every function must be fully implemented.
+- **Context-Aware Testing:** Falls back to the project's testing framework if one exists, otherwise leaves a single assert-based self-check. The original forced a one-size-fits-all approach.
+- **Diff-Only Editing:** Prevents agents from rewriting entire files to change two lines — critical for tools like Cursor, Cline, and Antigravity.
+- **Error Escalation:** Strict retry-once-then-halt policy. No infinite loops.
 
 This repo contains **no runtime code**. It is a declarative prompt instruction set.
 
