@@ -23,6 +23,7 @@ Inspired by [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail
 - **Context-Aware Testing:** Falls back to the project's testing framework if one exists, otherwise leaves a single assert-based self-check. The original forced a one-size-fits-all approach.
 - **Diff-Only Editing:** Prevents agents from rewriting entire files to change two lines — critical for tools like Cursor, Cline, and Antigravity.
 - **Error Escalation:** Strict retry-once-then-halt policy. No infinite loops.
+- **_ponytail_principles.md Generation:** Any project initialized with this wiki skill will automatically generate a `_ponytail_principles.md` file, forcing the agent to write highly optimized, minimal code while strictly preserving the integrity and tracking of the knowledge base.
 
 This repo contains **no runtime code**. It is a declarative prompt instruction set.
 
