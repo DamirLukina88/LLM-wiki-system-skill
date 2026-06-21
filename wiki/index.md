@@ -12,7 +12,8 @@ The top-level map of this knowledge base. Every page should be reachable from he
 
 ## Topics
 
-_(empty — add links as pages are created)_
+- [Ponytail v2 Philosophy](ponytail-v2.md)
+- [Fable 5 Architecture](fable5-architecture.md)
 
 ## Meta
 
@@ -21,6 +22,8 @@ _(empty — add links as pages are created)_
 
 ## Recently Updated
 
+- **2026-06-21:** [Ponytail v2 Philosophy](ponytail-v2.md) — Ingested
+- **2026-06-21:** [Fable 5 Architecture](fable5-architecture.md) — Ingested
 - **2026-05-22:** [Changelog](changelog.md) — Created
 
 ## Orphans
